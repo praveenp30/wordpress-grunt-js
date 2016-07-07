@@ -38,7 +38,7 @@
 					"version": "dev-master",
 					"type"	: "autoconfig",
 					"source": {
-						"url": "https://github.com/praveenp30/wp-autoconfig",
+						"url": "https://github.com/praveenp30/wpconfig-env",
 						"type": "git",
 						"reference": "origin/master"
 					},

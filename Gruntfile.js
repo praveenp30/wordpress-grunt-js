@@ -67,7 +67,7 @@ module.exports = function(grunt)
 	                            }
 	                            return true;
 	                        }
-	                    },
+	                    }/*,
 	                    {
 	                        config: 'dbname',
 	                        type: 'input',
@@ -111,7 +111,7 @@ module.exports = function(grunt)
 	                            }
 	                            return true;
 	                        }
-	                    }                                     
+	                    } */                                    
 	                ]
 	            }
 	        }
@@ -156,7 +156,7 @@ module.exports = function(grunt)
 							pattern: /project url/ig,
 							replacement: '<%= projecturl %>'
 
-						},
+						}/*,
 						{
 							pattern: /dbname/i,
 							replacement: '<%= dbname %>'
@@ -177,14 +177,14 @@ module.exports = function(grunt)
 							pattern: /dbhost/i,
 							replacement: '<%= dbhost %>'
 
-						},
+						},*/
 					]
 					  }
 					}
 			},
 
 		copy: {
-	        main: {
+	        before: {
 	            files: [
 	                {
 	                    expand: true,
@@ -199,12 +199,22 @@ module.exports = function(grunt)
 	                    dest: 'wp/'
 	                }
 	           ]
+	        },
+	        after: {
+	            files: [
+	                {
+	                    expand: true,
+	                    cwd:'wp/',
+	                    src: '**',
+	                    dest: 'www/'
+	                },
+	           ]
 	        }
 	      },
 
 	      clean: {
 	      	before: ["wp/wp-content/themes/*/","wp/wp-content/plugins/hello.php","wp/wp-config-sample.php"],
-	      	after: ["vendor/custom-wptheme", "vendor/wp-autoconfig"]
+	      	after: ["vendor/", "composer.json", "composer.lock"]
 	    },
 
 	    open : {
@@ -233,11 +243,12 @@ module.exports = function(grunt)
 		[
 		'composer:build:install', 
 		'clean:before', 
-		'copy', 
+		'copy:before', 
 		'clean:after', 
 		'prompt:target', 
 		//'shell:install_db',
-		//'string-replace:dev',
+		'string-replace:dev',
+		'copy:after', 
 		'open:dev'
 	]); 
 
