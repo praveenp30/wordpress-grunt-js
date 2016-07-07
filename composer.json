@@ -1,0 +1,71 @@
+{
+	"name": "wp automation",
+	"description": "wordpess automation for development",
+	"keywords": ["wordpress","automation"],
+	"license": "GPL-2.0+",
+	"authors": [{
+		"name": "praveen",
+		"email": "praveen.p@krds.fr",
+		"role": "Developer"
+	}],
+	"type": "project",
+	"minimum-stability": "dev",
+	"repositories": [
+		{
+		"type": "composer",
+		"url": "https://wpackagist.org"
+		},
+		{ 
+			"type":"package",
+			"package":{
+				"name": "custom-wptheme",
+					"version": "dev-master",
+					"type"	: "customtheme",
+					"source": {
+						"url": "https://github.com/praveenp30/custom-wptheme",
+						"type": "git",
+						"reference": "origin/master"
+					},
+					"require": {
+						"composer/installers": "~1.0"
+					}
+			}
+		},
+		{ 
+			"type":"package",
+			"package":{
+				"name": "wp-autoconfig",
+					"version": "dev-master",
+					"type"	: "autoconfig",
+					"source": {
+						"url": "https://github.com/praveenp30/wp-autoconfig",
+						"type": "git",
+						"reference": "origin/master"
+					},
+					"require": {
+						"composer/installers": "~1.0"
+					}
+			}
+		}
+		
+	],
+	"config": {
+		"vendor-dir": "vendor"
+	},
+	"require": {
+		"johnpbloch/wordpress": "4.5.2",
+		"wpackagist-plugin/adminimize": "1.10.4",
+		"wpackagist-plugin/wordpress-seo": "3.2.5",
+		"custom-wptheme": "dev-master",
+		"wp-autoconfig": "dev-master"
+	},
+	"extra": {
+		"wordpress-install-dir": "wp",
+		"installer-paths": {
+			"wp/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+			"wp/wp-content/themes/{$name}/": ["type:wordpress-theme"],
+			"wp/wp-content/themes/": ["type:customtheme"],
+			"wp/": ["type:autoconfig"]
+		}
+	}
+}
