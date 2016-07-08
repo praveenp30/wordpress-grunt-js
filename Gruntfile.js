@@ -243,11 +243,11 @@ module.exports = function(grunt)
 		'composer:build:install', 
 		'clean:before', 
 		'copy:before', 
-		'clean:after', 
 		'prompt:target', 
 		//'shell:install_db',
 		'string-replace:dev',
-		'copy:after', 
+		'copy:after',
+		'clean:after',  
 		'open:dev'
 	]); 
 
