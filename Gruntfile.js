@@ -67,7 +67,7 @@ module.exports = function(grunt)
 	                            }
 	                            return true;
 	                        }
-	                    },
+	                    }/*,
 	                    {
 	                        config: 'dbname',
 	                        type: 'input',
@@ -111,7 +111,7 @@ module.exports = function(grunt)
 	                            }
 	                            return true;
 	                        }
-	                    }                                  
+	                    } */                                 
 	                ]
 	            }
 	        }
@@ -156,7 +156,7 @@ module.exports = function(grunt)
 							pattern: /project url/ig,
 							replacement: '<%= projecturl %>'
 
-						},
+						}/*,
 						{
 							pattern: /dbname/i,
 							replacement: '<%= dbname %>'
@@ -177,7 +177,7 @@ module.exports = function(grunt)
 							pattern: /dbhost/i,
 							replacement: '<%= dbhost %>'
 
-						},
+						},*/
 					]
 					  }
 					}
@@ -214,7 +214,7 @@ module.exports = function(grunt)
 
 	      clean: {
 	      	before: ["wp/wp-content/themes/*/","wp/wp-content/plugins/hello.php","wp/wp-config-sample.php"],
-	      	after: ["vendor/", "composer.json", "composer.lock"]
+	      	after: ["vendor/", "composer.json", "composer.lock", "wp/"]
 	    },
 
 	    open : {
@@ -226,7 +226,6 @@ module.exports = function(grunt)
 });
 	 
 	grunt.loadNpmTasks('grunt-composer');
-	grunt.loadNpmTasks('grunt-wordpress-deploy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -246,7 +245,7 @@ module.exports = function(grunt)
 		'copy:before', 
 		'clean:after', 
 		'prompt:target', 
-		'shell:install_db',
+		//'shell:install_db',
 		'string-replace:dev',
 		'copy:after', 
 		'open:dev'
