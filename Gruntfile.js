@@ -29,11 +29,11 @@ module.exports = function(grunt)
 					files: [{
 						expand: true,
 						flatten: false,
-						cwd: 'wp/wp-content/themes/krds/',
+						cwd: 'www/wp-content/themes/krds/',
 						ext: '.js',
 						src: ['**/*.js', '!*.min.js'],
 						filter: 'isFile',
-						dest: 'wp/wp-content/themes/krds/'
+						dest: 'www/wp-content/themes/krds/'
 					}]
 				}
 		},
@@ -43,11 +43,11 @@ module.exports = function(grunt)
 				  files: [{
 					expand: true,
 					flatten: false,
-					cwd: 'wp/wp-content/themes/krds/',
+					cwd: 'www/wp-content/themes/krds/',
 					ext: '.css',
-					src: ['*.css', '!*.min.css'],
+					src: ['**/*.css', '!*.min.css'],
 					filter: 'isFile',
-					dest: 'wp/wp-content/themes/krds/'
+					dest: 'www/wp-content/themes/krds/'
 					
 				  }]
 				}
@@ -131,11 +131,11 @@ module.exports = function(grunt)
 				  files: [{
 					expand: true,
 					flatten: false,
-					cwd: 'wp/wp-content/themes/krds/',
+					cwd: 'www/wp-content/themes/krds/',
 					ext: '.css',
 					src: ['**/*.css'],
 					filter: 'isFile',
-					dest: 'wp/wp-content/themes/krds/'
+					dest: 'www/wp-content/themes/krds/'
 				  }],
 				  options: {
 					replacements: [{
