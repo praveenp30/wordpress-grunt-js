@@ -67,7 +67,7 @@ module.exports = function(grunt)
 	                            }
 	                            return true;
 	                        }
-	                    }/*,
+	                    },
 	                    {
 	                        config: 'dbname',
 	                        type: 'input',
@@ -111,7 +111,7 @@ module.exports = function(grunt)
 	                            }
 	                            return true;
 	                        }
-	                    } */                                    
+	                    }                                  
 	                ]
 	            }
 	        }
@@ -156,7 +156,7 @@ module.exports = function(grunt)
 							pattern: /project url/ig,
 							replacement: '<%= projecturl %>'
 
-						}/*,
+						},
 						{
 							pattern: /dbname/i,
 							replacement: '<%= dbname %>'
@@ -177,7 +177,7 @@ module.exports = function(grunt)
 							pattern: /dbhost/i,
 							replacement: '<%= dbhost %>'
 
-						},*/
+						},
 					]
 					  }
 					}
@@ -246,7 +246,7 @@ module.exports = function(grunt)
 		'copy:before', 
 		'clean:after', 
 		'prompt:target', 
-		//'shell:install_db',
+		'shell:install_db',
 		'string-replace:dev',
 		'copy:after', 
 		'open:dev'

@@ -22,7 +22,7 @@
 					"version": "dev-master",
 					"type"	: "customtheme",
 					"source": {
-						"url": "https://github.com/praveenp30/custom-wptheme",
+						"url": "https://github.com/praveenp30/wp-theme-structure",
 						"type": "git",
 						"reference": "origin/master"
 					},
